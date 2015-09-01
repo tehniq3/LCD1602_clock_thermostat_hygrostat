@@ -182,6 +182,31 @@ void loop () {
       }
     lcd.print(now.second());
 //    lcd.print("     ");
+   
+   
+    if (te > tes) 
+ {
+if (heat == 1) digitalWrite(temppeste, LOW); 
+if (heat == 0) digitalWrite(temppeste, HIGH); 
+ } 
+if (tes - dete > te)
+  {
+if (heat == 0) digitalWrite(temppeste, LOW); 
+if (heat == 1) digitalWrite(temppeste, HIGH); 
+ } 
+
+ if (has > hass) 
+ {
+if (dry == 1) digitalWrite(umidpeste, HIGH); 
+if (dry == 0) digitalWrite(umidpeste, LOW); 
+ } 
+ if (has < hass - dehas) 
+ {
+if (dry == 0) digitalWrite(umidpeste, HIGH); 
+if (dry == 1) digitalWrite(umidpeste, LOW); 
+ } 
+
+   
     
     //current time in minutes since midnight (used to check against sunrise/sunset easily)
  //   TimeMins = (now.hour() * 60) + now.minute();
@@ -464,28 +489,7 @@ if (dry == 0)
 }
 
 
-  if (te > tes) 
- {
-if (heat == 1) digitalWrite(temppeste, LOW); 
-if (heat == 0) digitalWrite(temppeste, HIGH); 
- } 
-if (tes - dete > te)
-  {
-if (heat == 0) digitalWrite(temppeste, LOW); 
-if (heat == 1) digitalWrite(temppeste, HIGH); 
- } 
-
- if (has > hass) 
- {
-if (dry == 1) digitalWrite(umidpeste, HIGH); 
-if (dry == 0) digitalWrite(umidpeste, LOW); 
- } 
- if (has < hass - dehas) 
- {
-if (dry == 0) digitalWrite(umidpeste, HIGH); 
-if (dry == 1) digitalWrite(umidpeste, LOW); 
- } 
-
+ 
     
   //If the knob is pushed again, enter the mode set menu
   pushlength = pushlengthset;
